@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player/Player.vox" type="ArrayMesh" id=1]
+[ext_resource path="res://Player/PlayerModle.gd" type="Script" id=2]
+
+[node name="Playermod" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Player" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="BuilitArray" type="Spatial" parent="."]
+
+[node name="builit1" type="Position3D" parent="BuilitArray"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.199771, 1.01441 )

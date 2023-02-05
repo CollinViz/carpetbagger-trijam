@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 1, 0.960784, 0.356863, 1 )
+
+[sub_resource type="PlaneMesh" id=1]
+material = SubResource( 3 )
+size = Vector2( 0.024, 0.125 )
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.0167598, 0.296089, 0.659218, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 0.960784, 0.356863, 1, 0.878431, 0.396078, 0.0784314, 1, 0.878431, 0.396078, 0.0784314, 1 )
+
+[node name="MuzzelFlash" type="Spatial"]
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+amount = 5
+lifetime = 0.6
+explosiveness = 1.0
+randomness = 0.47
+lifetime_randomness = 1.0
+mesh = SubResource( 1 )
+flag_align_y = true
+direction = Vector3( 7.647, 0, 0 )
+spread = 180.0
+initial_velocity = 5.0
+damping = 202.24
+damping_random = 0.68
+color = Color( 0.878431, 0.396078, 0.0784314, 1 )
+color_ramp = SubResource( 2 )

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Common/3rdPersonCamera/SprintArmMethod.gd" type="Script" id=1]
+
+[node name="SpringArm" type="SpringArm" groups=["mouse_lock"]]
+spring_length = 7.0
+margin = 0.2
+script = ExtResource( 1 )
+
+[node name="Camera" type="Spatial" parent="."]

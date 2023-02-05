@@ -1,0 +1,93 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "FovDetector",
+"language": "GDScript",
+"path": "res://Common/Detector/FovDetector.gd"
+}, {
+"base": "Reference",
+"class": "GSAIArrive",
+"language": "GDScript",
+"path": "res://Common/Utils/Arrive.gd"
+}, {
+"base": "Reference",
+"class": "GSAIUtils",
+"language": "GDScript",
+"path": "res://Common/Utils/GSAIUtils.gd"
+}, {
+"base": "Resource",
+"class": "LevelItem",
+"language": "GDScript",
+"path": "res://Common/Level/LevelItem.gd"
+}, {
+"base": "Resource",
+"class": "LevelList",
+"language": "GDScript",
+"path": "res://Common/Level/levelList.gd"
+}, {
+"base": "Spatial",
+"class": "RangeDetector",
+"language": "GDScript",
+"path": "res://Common/Detector/RangeDetector.gd"
+}, {
+"base": "Spatial",
+"class": "SensorsManager",
+"language": "GDScript",
+"path": "res://Common/SensorsManager.gd"
+}, {
+"base": "Node",
+"class": "StatsSystem",
+"language": "GDScript",
+"path": "res://Common/Stats.gd"
+}, {
+"base": "Spatial",
+"class": "TargetSystem",
+"language": "GDScript",
+"path": "res://Common/Detector/TargetSystem.gd"
+}, {
+"base": "Path",
+"class": "path_spawner",
+"language": "GDScript",
+"path": "res://Common/spawner/spawner.gd"
+} ]
+_global_script_class_icons={
+"FovDetector": "",
+"GSAIArrive": "",
+"GSAIUtils": "",
+"LevelItem": "",
+"LevelList": "",
+"RangeDetector": "",
+"SensorsManager": "",
+"StatsSystem": "",
+"TargetSystem": "",
+"path_spawner": ""
+}
+
+[application]
+
+config/name="carpetbagger-trijam"
+config/icon="res://icon.png"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

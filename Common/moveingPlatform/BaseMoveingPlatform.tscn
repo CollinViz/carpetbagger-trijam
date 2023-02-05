@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="Curve3D" id=1]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector3Array(  ),
+"tilts": PoolRealArray(  )
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "move"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path/PathFollow:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="BaseMovingPlatform" type="Spatial"]
+
+[node name="Path" type="Path" parent="."]
+curve = SubResource( 1 )
+
+[node name="PathFollow" type="PathFollow" parent="Path"]
+
+[node name="RemoteTransform" type="RemoteTransform" parent="Path/PathFollow"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "move"
+playback_process_mode = 0
+anims/RESET = SubResource( 3 )
+anims/move = SubResource( 2 )
+
+[node name="PlatForm" type="KinematicBody" parent="."]
+
+[node name="Model" type="Spatial" parent="PlatForm"]
